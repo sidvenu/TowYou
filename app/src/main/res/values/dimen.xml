@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="cardRadius">5dp</dimen>
+    <dimen name="cardBorderWidth">1dp</dimen>
+    <dimen name="logoSize">18dp</dimen>
+</resources>
