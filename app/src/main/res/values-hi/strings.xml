@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TowYou</string>
+    <string name="social_media_login">- या सोशल मीडिया का उपयोग करके लॉगिन करें -</string>
+    <string name="verification_helper_text">कृपया %1$s पर भेजा गया सत्यापन कोड टाइप करें</string>
+    <string name="verification_code">पुष्टि संख्या</string>
+</resources>

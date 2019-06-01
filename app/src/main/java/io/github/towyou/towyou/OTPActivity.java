@@ -1,19 +1,15 @@
 package io.github.towyou.towyou;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.EditText;
 import android.widget.TextView;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.mukesh.OnOtpCompletionListener;
 import com.mukesh.OtpView;
 
-public class OTPActivity extends AppCompatActivity {
+public class OTPActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +31,7 @@ public class OTPActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // check if OTP is correct and login
+                //startActivity(new Intent(OTPActivity.this, LanguageActivity.class));
             }
         });
     }
