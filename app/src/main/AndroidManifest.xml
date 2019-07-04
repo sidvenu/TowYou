@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="io.github.towyou.towyou">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LanguageActivity">
+        <activity android:name=".ReportActivity"></activity>
+        <activity android:name=".HomeActivity" />
+        <activity
+            android:name=".LanguageActivity"
+            android:theme="@style/AppThemeNoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,10 +23,18 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".OTPActivity"
-            android:windowSoftInputMode="adjustResize" />
-        <activity android:name=".LoginActivity" />
+            android:name=".LoginActivity"
+            android:theme="@style/AppThemeNoActionBar" />
         <activity android:name=".BaseActivity" />
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="io.github.towyou.towyou"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"></meta-data>
+        </provider>
     </application>
 
 </manifest>

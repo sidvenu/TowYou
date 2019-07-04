@@ -2,7 +2,9 @@ package io.github.towyou.towyou;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -19,26 +21,21 @@ public class LoginActivity extends BaseActivity {
         findViewById(R.id.login_card_view).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO: Check if it is a phone number or an email, and go to the respective screen
-                startActivity(new Intent(LoginActivity.this, OTPActivity.class));
-            }
-        });
-        findViewById(R.id.facebook_login).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                // TODO: Check if the email is verified or not
+                boolean isEmailVerified = true;
+                if (!isEmailVerified) {
+                    Toast.makeText(LoginActivity.this, "Please verify your email address before proceeding", Toast.LENGTH_LONG).show();
+                } else {
+                    startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                }
 
             }
         });
         findViewById(R.id.google_login).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-            }
-        });
-        findViewById(R.id.twitter_login).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
+                // once google login is done, no verification will be needed
+                startActivity(new Intent(LoginActivity.this, HomeActivity.class));
             }
         });
     }
